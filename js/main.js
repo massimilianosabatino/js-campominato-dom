@@ -9,6 +9,7 @@ const board = document.getElementById('board');
 const play = document.getElementById('play');
 const select = document.getElementById('set-game');
 let bomb =[];
+let gameOver = false;
 
 
 /*
@@ -29,9 +30,7 @@ function createElement(htmlElement, htmlId, htmlClass, where, insertText) {
     single.className = htmlClass;
     single.innerText = insertText;
     where.appendChild(single);
-    single.addEventListener('click', function() {
-        playLogic(single);
-    });
+    single.addEventListener('click', playLogicCall);
     return single;
 }
 
@@ -54,20 +53,36 @@ function gridDimension(colRowNumber){
     }
 }
 
+//Funzione di servizio - associata per richiamare l'event listener così da poterlo rimuovere in seguito
+function playLogicCall() {
+    if (!gameOver) {
+        playLogic(this);
+      }
+}
+
 //Add gameplay logic
 function playLogic(single){
     const cellNumber = single.innerText;
     if(bomb.includes(parseInt(cellNumber))){
         single.classList.add('bomb');
+        stopGame();
+        single.removeEventListener('click', playLogicCall);
     } else {
         single.classList.add('selected');
     }
+
 }
+
+function stopGame() {
+    alert('Game over');
+    gameOver = true;
+  }
 
 //Start game and refresh grid
 function playGame(){
     board.innerHTML = '';
     bomb = [];
+    gameOver = false;
     gridDimension(select.value);
 }
 
