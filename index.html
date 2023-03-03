@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campo minato</title>
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <!-- /Google Font -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container-page d-flex flex-column ">
+        <header class="d-flex align-item-center">
+            <img src="img/logo-boolean.png" class="logo" alt="Logo Boolean">
+            <h1>Campo Minato</h1>
+            <div id="setting">
+                <span>Difficoltà:</span>
+                <select name="difficulty" id="set-game">
+                    <option value="10">Easy</option>
+                    <option value="9">Medium</option>
+                    <option value="7">Hard</option>
+                </select>
+            </div>
+            <button id="play" onclick="playGame()">Play</button>
+        </header>
+        <main class="d-flex justify-content-center align-item-center">
+            <div id="board" class="d-flex">
+                
+            </div>
+        </main>
+        <footer>Made with &hearts; by <a href="https://boolean.careers/" target="_blank">Boolean</a></footer>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+</html>
