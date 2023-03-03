@@ -10,6 +10,7 @@ const play = document.getElementById('play');
 const select = document.getElementById('set-game');
 let bomb =[];
 let gameOver = false;
+let score = 0;
 
 
 /*
@@ -63,18 +64,23 @@ function playLogicCall() {
 //Add gameplay logic
 function playLogic(single){
     const cellNumber = single.innerText;
+    const maxScore = Math.pow(select.value, 2) - bomb.length;
     if(bomb.includes(parseInt(cellNumber))){
         single.classList.add('bomb');
         stopGame();
         single.removeEventListener('click', playLogicCall);
+    } else if(score === maxScore){
+        stopGame();
+        single.removeEventListener('click', playLogicCall);
     } else {
         single.classList.add('selected');
+        score ++ ;
     }
 
 }
 
 function stopGame() {
-    alert('Game over');
+    alert(`Game Over! Hai totalizzato ${score} punti.`);
     gameOver = true;
   }
 
@@ -83,6 +89,7 @@ function playGame(){
     board.innerHTML = '';
     bomb = [];
     gameOver = false;
+    score = 0;
     gridDimension(select.value);
 }
 
