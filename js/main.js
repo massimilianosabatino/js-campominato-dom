@@ -10,6 +10,7 @@ const play = document.getElementById('play');
 const select = document.getElementById('set-game');
 let bomb =[];
 
+
 /*
 *  Function
 */
@@ -31,6 +32,7 @@ function createElement(htmlElement, htmlId, htmlClass, where, insertText) {
     single.addEventListener('click', function() {
         playLogic(single);
     });
+    return single;
 }
 
 //Create general board
@@ -54,7 +56,12 @@ function gridDimension(colRowNumber){
 
 //Add gameplay logic
 function playLogic(single){
+    const cellNumber = single.innerText;
+    if(bomb.includes(parseInt(cellNumber))){
+        single.classList.add('bomb');
+    } else {
         single.classList.add('selected');
+    }
 }
 
 //Start game and refresh grid
