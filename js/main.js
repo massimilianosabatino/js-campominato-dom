@@ -80,12 +80,11 @@ function playLogic(single){
         single.removeEventListener('click', playLogicCall);
         modal.style.display = "flex";
         textModal.innerText = `Hai vinto! Il tuo punteggio è ${score}`;
-    } else {
+    } else if(!single.classList.contains('selected')){
         single.classList.add('selected');
         score ++ ;
         tableScore.innerHTML = score;
     }
-
 }
 
 function stopGame() {
@@ -107,9 +106,11 @@ function playGame(){
     gridDimension(select.value);
 }
 
+//Add scoreboard
 const tableScore = document.getElementById('table-score');
 tableScore.innerHTML = score;
 
+//Modal on end game
 span.onclick = function() {
     modal.style.display = "none";
 }
