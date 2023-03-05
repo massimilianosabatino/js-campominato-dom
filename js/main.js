@@ -82,6 +82,12 @@ function playLogic(single){
 function stopGame() {
     alert(`Game Over! Hai totalizzato ${score} punti.`);
     gameOver = true;
+    const allBomb = document.querySelectorAll('#cell');
+    for(let i = 0; i < allBomb.length - 1; i++){
+        if(bomb.includes(parseInt(allBomb[i].innerHTML))){
+            allBomb[i].classList.add('bomb');
+        }
+    }
   }
 
 //Start game and refresh grid
@@ -92,9 +98,4 @@ function playGame(){
     score = 0;
     gridDimension(select.value);
 }
-
-
-/*
-*  Main
-*/
 
