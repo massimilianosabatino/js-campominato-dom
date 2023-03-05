@@ -123,4 +123,48 @@ main {
 footer {
     padding: 2.5rem;
     font-size: clamp(1rem, 2vw, 2.125rem);
+    justify-content: space-between;
+    font-size: 1rem;
 }
+
+/*
+*  Modal
+*/
+
+#modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8); /* Black w/ opacity */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    font-size: 1.75rem;
+
+  }
+
+  .close {
+    color: #aaaaaa;
+    font-size: 1.75rem;
+    font-weight: bold;
+    margin-left: auto;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: var(--ms-main-color);
+    text-decoration: none;
+    cursor: pointer;
+  }

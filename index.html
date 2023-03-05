@@ -14,6 +14,7 @@
 </head>
 <body>
     <div class="container-page d-flex flex-column ">
+        <!-- Title and setting -->
         <header class="d-flex align-item-center">
             <img src="img/logo-boolean.png" class="logo" alt="Logo Boolean">
             <h1>Campo Minato</h1>
@@ -27,12 +28,32 @@
             </div>
             <button id="play" onclick="playGame()">Play</button>
         </header>
+        <!-- /Title and setting -->
+        <!-- Container cell -->
         <main class="d-flex justify-content-center align-item-center">
             <div id="board" class="d-flex">
                 
             </div>
         </main>
-        <footer>Made with &hearts; by <a href="https://boolean.careers/" target="_blank">Boolean</a></footer>
+        <!-- /Container cell -->
+        <!-- Footer and score count -->
+        <footer class="d-flex">
+            <p>Made with &hearts; by <strong>Classe 89 </strong> <a href="https://boolean.careers/" target="_blank">Boolean</a></p>
+            <div id="scoreboard" class="">
+                Il tuo punteggio è <span id="table-score"></span>
+            </div>
+        </footer>
+        <!-- /Footer and score count -->
+        <!-- Modal Game over -->
+        <div id="modal" class="d-flex justify-content-center align-item-center">
+            <div class="modal-content">
+              <span class="close">&times;</span>
+              <p><strong>Game Over</strong></p>
+              <p id="text-modal"></p>
+            </div>
+          
+          </div>
+        <!-- /Modal Game over -->
     </div>
     <script src="js/main.js"></script>
 </body>

@@ -8,6 +8,10 @@
 const board = document.getElementById('board');
 const play = document.getElementById('play');
 const select = document.getElementById('set-game');
+const modal = document.getElementById('modal');
+const textModal = document.getElementById('text-modal');
+const span = document.getElementsByClassName("close")[0];
+
 let bomb =[];
 let gameOver = false;
 let score = 0;
@@ -69,18 +73,22 @@ function playLogic(single){
         single.classList.add('bomb');
         stopGame();
         single.removeEventListener('click', playLogicCall);
+        modal.style.display = "flex";
+        textModal.innerText = `Hai perso! Il tuo punteggio è ${score}`;
     } else if(score === maxScore){
         stopGame();
         single.removeEventListener('click', playLogicCall);
+        modal.style.display = "flex";
+        textModal.innerText = `Hai vinto! Il tuo punteggio è ${score}`;
     } else {
         single.classList.add('selected');
         score ++ ;
+        tableScore.innerHTML = score;
     }
 
 }
 
 function stopGame() {
-    alert(`Game Over! Hai totalizzato ${score} punti.`);
     gameOver = true;
     const allBomb = document.querySelectorAll('#cell');
     for(let i = 0; i < allBomb.length - 1; i++){
@@ -99,3 +107,15 @@ function playGame(){
     gridDimension(select.value);
 }
 
+const tableScore = document.getElementById('table-score');
+tableScore.innerHTML = score;
+
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
