@@ -6,6 +6,7 @@
 
 :root {
     --ms-main-color: #7FFFD4;
+    --ms-cell-color: #60cba7;
 }
 
 body {
@@ -89,6 +90,12 @@ main {
 
 #cell {
     border: 1px solid black;
+    background-color: var(--ms-cell-color);
+    color: var(--ms-cell-color);
+}
+
+#cell:hover {
+    box-shadow: inset 0 0 10px #397963;
 }
 
 #board > #cell {
@@ -109,12 +116,14 @@ main {
     width: calc(100% / 7);
 }
 
-.selected {
+#cell.selected {
     background-color: aqua;
+    color: #161616;
 }
 
-.bomb {
+#cell.bomb {
     background-color: #f00;
+    color: #161616;
 }
 
 /*
