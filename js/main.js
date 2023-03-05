@@ -7,6 +7,7 @@
 //Element from page
 const board = document.getElementById('board');
 const play = document.getElementById('play');
+const replay = document.querySelector('.modal-content > button');
 const select = document.getElementById('set-game');
 const modal = document.getElementById('modal');
 const textModal = document.getElementById('text-modal');
@@ -117,6 +118,8 @@ span.onclick = function() {
 
 window.onclick = function(event) {
     if (event.target == modal) {
+        modal.style.display = "none";
+    } else if (event.target == replay ) {
         modal.style.display = "none";
     }
 }

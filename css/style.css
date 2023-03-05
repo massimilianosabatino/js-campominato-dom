@@ -162,7 +162,6 @@ footer {
     flex-wrap: wrap;
     align-items: center;
     font-size: 1.75rem;
-
   }
 
   .close {
@@ -177,4 +176,11 @@ footer {
     color: var(--ms-main-color);
     text-decoration: none;
     cursor: pointer;
+  }
+
+  .modal-content > p {
+    margin: .9375rem 0;
+  }
+  .modal-content > button {
+    margin: 1.5625rem 0;
   }
