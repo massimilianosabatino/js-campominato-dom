@@ -83,7 +83,8 @@ main {
 
 #board {
     padding: 50px 2.5rem;
-    max-width: 71.25rem;
+    /* max-width: 71.25rem; */
+    width: clamp(18.75rem, 60vh, 71.25rem );
     height: 100%;
     flex-wrap: wrap;
 }
@@ -106,6 +107,7 @@ main {
 
 .cell-10{
     width: calc(100% / 10);
+    aspect-ratio: 1;
 }
 
 .cell-9{
